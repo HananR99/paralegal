@@ -65,7 +65,7 @@ The output must be reproducible by running your script.
 We will evaluate:
 
 - Correctness of `bench` extraction
-- Correctness of `judge_final` extraction
+- Correctness of `author_judge` extraction
 - Robust handling of formatting variations
 - Code structure and clarity
 - Reproducibility of results
