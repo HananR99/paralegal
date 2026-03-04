@@ -29,16 +29,16 @@ For each input file, produce:
 {
   "source_file": "case1.pdf",
   "bench": ["Judge Name 1", "Judge Name 2"],
-  "judge_final": ["Judge Name 1"],
+  "author_judge": ["Judge Name 1"],
   "evidence": {
     "bench": "Original extracted text snippet",
-    "judge_final": "Original extracted text snippet"
+    "author_judge": "Original extracted text snippet"
   }
 }
 
 Output files may be:
-- One JSON file per input file, or
-- A single combined JSON file.
+- One JSONL file per input file, or
+- A single combined JSONL file.
 
 The output must be reproducible by running your script.
 
@@ -72,22 +72,33 @@ We will evaluate:
 
 ---
 
-## Execution Requirements
+## Environment Setup
 
-Your repository must clearly include:
+This project uses **uv** for dependency management and execution.
 
-- Installation steps
-- Dependency setup
-- Exact command(s) to run the extraction
-- Instructions to generate output
+Install uv if you do not already have it:
 
-Example:
+curl -Ls https://astral.sh/uv/install.sh | sh
 
-python run.py
+
+or follow the official installation instructions:
+https://docs.astral.sh/uv/
+
+---
+
+## Running the Extraction
+
+Your repository must clearly include the commands required to run the extraction.
+
+Example execution:
+
+uv run main.py
 
 or
 
-python run.py --input_dir data --output output.json
+uv run main.py --input_dir data --output output.json
+
+All dependencies should be declared so that `uv` can automatically install them when running the project.
 
 ---
 
@@ -95,7 +106,7 @@ python run.py --input_dir data --output output.json
 
 In addition to implementation, answer the following question in your `README.md`:
 
-If this system needed to process 20,000+ case reports, some exceeding 300+ pages, how would you modify or optimize your approach to ensure scalability and performance?
+> If this system needed to process 20,000+ case reports, some exceeding 300+ pages, how would you modify or optimize your approach to ensure scalability and performance?
 
 This answer should be brief but technically sound.
 
